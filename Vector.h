@@ -9,6 +9,7 @@ class Vector {
     Vector();
 
     void push_back(const T& el);
+    void pop_back();
 };
 
 template<typename T>
@@ -22,4 +23,23 @@ template<typename T>
 void Vector::push_back(const T& el) {
     this->data[size] = el;
 	this->size++;
+}
+
+template<typename T>
+void Vector::pop_back()
+{
+    if(this->size <= 0)
+    {
+        return;
+    } 
+
+    T* smaller_vector = new T[capacity];
+    for(size_t i = 0; i < this->size - -1, i++)
+    {
+        smaller_vector[i] = this->data[i];
+    }
+    
+    delete[] this->vector;
+    this->vector = smaller_vector;
+    this->size--;
 }
