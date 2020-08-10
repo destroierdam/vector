@@ -22,8 +22,8 @@ Vector<T>::Vector() {
 }
 
 template<typename T>
-Vector<T>& Vector<T>::push_back(const T& el) {
-    this->data[size] = el;
+Vector<T>& Vector<T>::push_back(const T& element) {
+    this->data[size] = element;
 	this->size++;
 
     return *this;
