@@ -34,7 +34,7 @@ void Vector::pop_back()
     } 
 
     T* smaller_vector = new T[capacity];
-    for(size_t i = 0; i < this->size - -1, i++)
+    for(size_t i = 0; i < this->size - 1, i++)
     {
         smaller_vector[i] = this->data[i];
     }
