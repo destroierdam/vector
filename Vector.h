@@ -6,8 +6,9 @@ class Vector {
 private:
     T* data;
     std::size_t size, capacity;
-    
-    void copy(const Vector& other); 
+ 
+    void copy(const Vector& other);
+    void destroy();
 public:
     Vector();
 
@@ -22,6 +23,11 @@ void copy(const Vector& other) {
     for(std::size_t i = 0; i < this->size; i++) {
         this->data[i] = other.data[i];
     }
+}
+
+template<typename T>
+void Vector<T>::destroy() {
+    delete[] this->data;
 }
 
 template<typename T>
