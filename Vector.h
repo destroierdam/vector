@@ -7,12 +7,18 @@ private:
     T* data;
     std::size_t size, capacity;
 
+    void destroy();
 public:
     Vector();
 
     Vector& push_back(const T& el);
     Vector& pop_back();
 };
+
+template<typename T>
+void Vector<T>::destroy() {
+    delete[] this->data;
+}
 
 template<typename T>
 Vector<T>::Vector() {
